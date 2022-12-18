@@ -33,3 +33,13 @@ $ composer-dev list
 ╶───────────────────────────┼───────────────────────────────┼─────────────╴
   example-local-environment │ composer-2.0.32-airflow-2.2.5 │ Not started  
 ```
+作成した環境の詳細情報を表示
+```
+$ composer-dev describe
+
+Composer example-local-environment environment is in state: Not started.
+
+Image version: composer-2.0.32-airflow-2.2.5
+Dags directory: /Users/sample/composer-dev-example/composer-local-dev/composer/example-local-environment/dags.
+The environment is using credentials from gcloud located at /Users/sample/.config/gcloud.
+```
