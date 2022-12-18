@@ -7,3 +7,21 @@
 $ gcloud auth application-default login
 $ gcloud auth login
 ```
+ライブラリのInstall
+```
+$ cd composer-local-dev
+$ pip3 install .
+```
+ローカル Composer環境の作成
+```
+$ composer-dev create \
+  --from-image-version IMAGE_VERSION \
+  --dags-path LOCAL_DAGS_PATH \
+  LOCAL_ENVIRONMENT_NAME
+```
+例
+```
+$ composer-dev create \
+  --from-image-version composer-2.0.32-airflow-2.2.5 \
+  example-local-environment
+```
