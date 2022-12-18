@@ -25,3 +25,11 @@ $ composer-dev create \
   --from-image-version composer-2.0.32-airflow-2.2.5 \
   example-local-environment
 ```
+作成した環境の確認
+```
+$ composer-dev list
+
+  Environment Name          │ Version*                      │ State        
+╶───────────────────────────┼───────────────────────────────┼─────────────╴
+  example-local-environment │ composer-2.0.32-airflow-2.2.5 │ Not started  
+```
