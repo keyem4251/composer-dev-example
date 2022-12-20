@@ -25,6 +25,8 @@ $ composer-dev create \
   --from-image-version composer-2.0.32-airflow-2.2.5 \
   example-local-environment
 ```
+--dag-pathを指定しないとcomposerディレクトリが作成されその下にdags, data, airflow.dbなどが作成される。  
+
 作成した環境の確認
 ```
 $ composer-dev list
@@ -43,3 +45,19 @@ Image version: composer-2.0.32-airflow-2.2.5
 Dags directory: /Users/sample/composer-dev-example/composer-local-dev/composer/example-local-environment/dags.
 The environment is using credentials from gcloud located at /Users/sample/.config/gcloud.
 ```
+Airflow 環境をスタート（localhost:8080でAirflow UIにアクセス）
+```
+$ composer-dev start example-local-environment
+Starting example-local-environment composer environment...
+...
+Started example-local-environment environment.
+
+1. You can put your DAGs in /Users/sample/composer-dev-example/composer-local-dev/composer/example-local-environment/dags
+2. Access Airflow at http://localhost:8080
+```
+Airflow 環境の停止
+```
+$ composer-dev stop example-local-environment
+Stopped composer local environment.
+```
+
