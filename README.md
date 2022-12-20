@@ -60,4 +60,22 @@ Airflow 環境の停止
 $ composer-dev stop example-local-environment
 Stopped composer local environment.
 ```
-
+Airflow 環境の削除..動かない
+```
+$ composer-dev remove example-local-environment
+Usage: composer-dev [OPTIONS] COMMAND [ARGS]...
+Try 'composer-dev --help' for help.
+╭─ Error ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ No such command 'remove'.                                                                                                      │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+Docker イメージの削除..動かない
+```
+$ docker rmi $(docker images --filter=reference='*/cloud-airflow-releaser/*/*' -q)
+Error response from daemon: conflict: unable to delete 428a4887bf60 (must be forced) - image is being used by stopped container 4ccc178d3498
+```
+Docker イメージの削除..-fオプションで強制削除
+```
+$ docker rmi -f $(docker images --filter=reference='*/cloud-airflow-releaser/*/*' -q)
+Error response from daemon: conflict: unable to delete 428a4887bf60 (must be forced) - image is being used by stopped container 4ccc178d3498
+```
