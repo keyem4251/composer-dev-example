@@ -79,6 +79,17 @@ Started example-local-environment environment.
 2. Access Airflow at http://localhost:8080
 ```
 
+ログの確認
+```
+$ composer-dev logs example-local-environment
+...
+run_id='scheduled__2022-01-01T00:00:00+00:00', try_number=1) to executor with priority 1 and queue default
+2022-12-24T06:45:02.809633465Z [2022-12-24 06:45:02,809] {base_executor.py:85} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'demo', 'airflow', 
+'scheduled__2022-01-01T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/sample.py']
+2022-12-24T06:45:02.815494757Z [2022-12-24 06:45:02,814] {sequential_executor.py:59} INFO - Executing command: ['airflow', 'tasks', 'run', 'demo', 'hello', 
+'scheduled__2022-01-02T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/sample.py']
+```
+
 Airflow 環境の停止
 ```
 $ composer-dev stop example-local-environment
