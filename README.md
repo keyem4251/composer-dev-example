@@ -29,7 +29,7 @@ $ composer-dev create \
 
 git cloneしたフォルダの下ではなく出ても環境は作成できる。
 ```
-composer-dev-example $ composer-dev create \                         
+/Users/sample/composer-dev-example $ composer-dev create \                         
   --from-image-version composer-2.0.32-airflow-2.2.5 \
   --dags-path dags \
   example-local-environment
@@ -63,6 +63,22 @@ Started example-local-environment environment.
 1. You can put your DAGs in /Users/sample/composer-dev-example/composer-local-dev/composer/example-local-environment/dags
 2. Access Airflow at http://localhost:8080
 ```
+
+Dagを変更して反映させるために再起動
+```
+$ composer-dev restart example-local-environment
+...
+2022-12-24T06:43:38.716401176Z DAG_PROCESSOR_MANAGER_LOG:[2022-12-24 06:43:38,715] {manager.py:518} INFO - Process each file at most once every 30 seconds
+2022-12-24T06:43:38.716415718Z [2022-12-24 06:43:38,715] {scheduler_job.py:1235} INFO - Marked 1 SchedulerJob instances as failed
+2022-12-24T06:43:38.716975468Z DAG_PROCESSOR_MANAGER_LOG:[2022-12-24 06:43:38,716] {manager.py:519} INFO - Checking for new files in /home/airflow/airflow/dags every 10 seconds
+2022-12-24T06:43:38.719036343Z DAG_PROCESSOR_MANAGER_LOG:[2022-12-24 06:43:38,717] {manager.py:704} INFO - Searching for files in /home/airflow/airflow/dags
+
+Started example-local-environment environment.
+
+1. You can put your DAGs in /Users/sample/composer-dev-example/composer-dev-example/dags
+2. Access Airflow at http://localhost:8080
+```
+
 Airflow 環境の停止
 ```
 $ composer-dev stop example-local-environment
