@@ -27,6 +27,14 @@ $ composer-dev create \
 ```
 --dag-pathを指定しないとcomposerディレクトリが作成されその下にdags, data, airflow.dbなどが作成される。  
 
+git cloneしたフォルダの下ではなく出ても環境は作成できる。
+```
+composer-dev-example $ composer-dev create \                         
+  --from-image-version composer-2.0.32-airflow-2.2.5 \
+  --dags-path dags \
+  example-local-environment
+```
+
 作成した環境の確認
 ```
 $ composer-dev list
